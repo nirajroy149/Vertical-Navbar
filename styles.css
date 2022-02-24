@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.sidebar{
+    position: fixed;
+    overflow: hidden;
+    width: 300px;
+    height: 100%;
+    top: 0;
+    left: -300px;
+    background-color: rgb(52 137 193 / 92%);
+    box-shadow: 1px 0px 5px 2px black;
+    transition: all 0.5s ease;
+}
+
+.sidebar-heading{
+    font-size: 2rem;
+    line-height: 64px;
+    padding-left: 26px;
+    color: rgb(52 137 193 / 92%);
+    background-color: aliceblue;
+    border-bottom: 5px solid black;
+}
+  
+ul li{
+    line-height: 50px;
+    width: 100%;
+}
+ul li a{
+    color: black;
+    width: 100%;
+    font-size: 1.4rem;
+    display: inline-block;
+    line-height: 60px;
+    padding-left: 30px;
+    border-radius: 5px;
+    border-bottom:5px solid black ;
+    border-top:  2px solid white ;
+    transition: all 0.3s ease;
+}
+
+ul li a:hover{
+    color: rgb(52 137 193 / 92%);
+    background-color: aliceblue;
+    transform: translateX(10px);
+}
+a.active{
+    color: white;
+    background-color: rgba(6, 30, 46, 0.37);
+   
+}
+a.active:hover{
+    color: white;
+    background-color: rgb(52 137 193 / 92%);
+}
+
+.nav-foot{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 0;   
+}
+
+.nav-foot div{
+    height: 60px;
+    width: 60px;
+    background-color: rgba(6, 30, 46, 0.37);
+    border: 2px dashed white;   
+}
+.sidebar .name{
+    color: white;
+    font-size: 1.2rem;
+    font-family: monospace;
+    position: absolute;
+    bottom: 80px;
+    left: 8%;
+}
+.fas{
+    font-size: 2.2rem;
+    background-color: aliceblue;
+    color: black; 
+    padding: 10px;
+    cursor: pointer;
+}
+#checkbox{
+    display: none;
+}
+i#check{
+    width: 100%;
+}
+label #check{
+    position: fixed; 
+    padding-left: 20px;
+    background-color: white;
+}
+label #cancel{
+    position: fixed;
+    top: 5px;
+    left: -250px;
+    background-color: aliceblue;
+    z-index: 1;
+    transition: all 0.5s ease;
+}
+#checkbox:checked~#check{
+    display: none;
+}
+#checkbox:checked~label #cancel{
+    left: 250px;
+}
+
+#checkbox:checked~.sidebar{
+    left: 0px;
+}
+#checkbox:checked~.main-content{
+    margin-left: 300px;
+}
+
+section{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: url(images/plant.jpg) no-repeat center center/cover;
+    height: 100vh;
+    width: 100%;
+    z-index: -1;
+    transition: all 0.5s;
+ 
+}
+#checkbox:checked~section{
+    left: 300px;
+}
+
+.nav-foot i{
+    font-size: 2rem;
+    color: white;
+}
+.nav-foot .box{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+}
